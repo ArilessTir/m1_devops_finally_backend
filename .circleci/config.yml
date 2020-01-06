@@ -14,7 +14,6 @@ jobs:
                 POSTGRES_USER: myUsr
                 POSTGRES_DB: flask_db_test
                 POSTGRES_PASSWORD: somePwd
-        working_directory: ~/repo
         steps:
             - checkout
             - restore_cache:
@@ -22,6 +21,7 @@ jobs:
             - run:
                 name: Install Python db
                 command: |
+                    . venv/bin/activate
                     pip install -r requirements/dev.txt --user
                     flask db migrate
                     flask db upgrade
