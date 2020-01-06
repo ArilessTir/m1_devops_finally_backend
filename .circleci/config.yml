@@ -8,11 +8,11 @@ version: 2
 jobs:
     build:
         docker:
-            - image: circleci/python:3.6.9
+          - image: circleci/python:3.6.9
             environment:
                 FLASK_CONFIG: testing
                 TEST_DATABASE_URL:  DATABASE_URL=postgresql://myUsr:somePwd@localhost:5432/myUsr
-            - image: circleci/postgres:10.10
+          - image: circleci/postgres:10.10
             environment:
                 POSTGRES_USER: myUsr
                 POSTGRES_DB: flask_db_test
