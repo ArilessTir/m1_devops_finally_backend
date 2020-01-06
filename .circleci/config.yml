@@ -25,6 +25,7 @@ jobs:
                 name: Install Python deps
                 command: |
                     pip install -r requirements/dev.txt --user
+                    $env:FLASK_APP = "webapp"
                     flask db migrate
                     flask db upgrade
                     flask test
