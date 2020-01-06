@@ -32,4 +32,4 @@ jobs:
             - save_cache:
                 key: deps1-{{ .Branch }}-{{ checksum "requirements/dev.txt" }}
                 paths:
-                - "venv"
+                - ./venv
