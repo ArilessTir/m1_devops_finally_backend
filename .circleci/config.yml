@@ -17,6 +17,7 @@ jobs:
                 POSTGRES_USER: myUsr
                 POSTGRES_DB: flask_db_test
                 POSTGRES_PASSWORD: "somePwd"
+        working_directory: ~/repo
         steps:
             - checkout
             - restore_cache:
@@ -25,7 +26,6 @@ jobs:
                 name: Install Python deps
                 command: |
                     pip install -r requirements/dev.txt --user
-                    $env:FLASK_APP = "webapp"
                     flask db migrate
                     flask db upgrade
                     flask test
