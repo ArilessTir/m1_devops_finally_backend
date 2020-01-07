@@ -16,10 +16,6 @@ jobs:
                 POSTGRES_USER: myUsr
                 POSTGRES_DB: flask_db_test
                 POSTGRES_PASSWORD: somePwd
-          - save_cache:
-              paths:
-                - ./venv
-            key: v1-dependencies-{{ checksum "requirements/dev.txt" }}
         steps:
           - checkout
           - restore_cache:
