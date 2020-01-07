@@ -10,6 +10,7 @@ jobs:
         docker:
           - image: circleci/python:3.6.9
             environment:
+                FLASK_CONFIG: testing
                 DATABASE_URL: postgresql://myUser:somePwd@localhost:5432/flask_db_test
           - image: circleci/postgres:10.10
             environment:
