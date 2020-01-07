@@ -26,6 +26,7 @@ jobs:
                     . venv/bin/activate
                     pip install flask
                     pip install -r requirements/dev.txt --user
+                    flask db migrate
                     flask db upgrade    
                     flask db test
             - save_cache:
