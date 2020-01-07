@@ -24,6 +24,7 @@ jobs:
                 command: |
                     python3 -m venv venv
                     . venv/bin/activate
+                    pip uninstall flask && python -m pip install flask --user
                     pip install -r requirements/dev.txt --user
                     flask db upgrade    
                     flask db test
