@@ -2,10 +2,8 @@ workflows:
     version: 2
     build-and-test:
         jobs:
-          - build and initialise
-          - deploy:
-              requires:
-                  -build and initialise
+        - build and initialise
+        - deploy 
 
 version: 2
 jobs:
@@ -30,6 +28,8 @@ jobs:
                   flask db upgrade    
                   flask test
     deploy:
+        docker:
+            - image: buildpack-deps:trusty
         steps:
           - checkout
           - run:
