@@ -6,6 +6,9 @@ workflows:
         - deploy:
             requires:
                 - build and initialise
+        - dockerB&P:
+            requires:
+                - deploy
 
 version: 2
 jobs:
