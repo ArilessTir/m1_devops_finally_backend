@@ -2,8 +2,10 @@ workflows:
     version: 2
     build-and-test:
         jobs:
-        - build and initialise
-        - deploy
+          - build and initialise
+          - deploy:
+              requires:
+                  -build and initialise
 
 version: 2
 jobs:
