@@ -3,6 +3,7 @@ workflows:
     build-and-test:
         jobs:
         - build and initialise
+        - deploy
 
 version: 2
 jobs:
