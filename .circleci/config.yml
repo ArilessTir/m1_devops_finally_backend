@@ -17,10 +17,12 @@ jobs:
                 POSTGRES_DB: flask_db_test
                 POSTGRES_PASSWORD: somePwd
         steps:
+          - checkout   
           - run:
               name: Install Python deps and initialise flask 
               command: |
                   python3 -m venv venv
+                  . venv/bin/activate
                   pip install -r requirements/dev.txt 
                   flask db upgrade    
                   flask test
