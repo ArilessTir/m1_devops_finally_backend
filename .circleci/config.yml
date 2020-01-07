@@ -4,7 +4,7 @@ workflows:
         jobs:
         - build and initialise
         - deploy:
-            require:
+            requires:
                 - build and initialise
 
 version: 2
